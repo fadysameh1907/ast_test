@@ -1,4 +1,4 @@
 main(){
-    print('change applied');
-    print('second branch');
+    print('git hub changes');
+    print('new changes');
 }
