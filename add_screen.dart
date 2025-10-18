@@ -14,7 +14,7 @@ class _AddScreenState extends State<AddScreen> {
   CollectionReference groups = FirebaseFirestore.instance.collection('groups');
 
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _groupNameController = TextEditingController();
   final TextEditingController _nmStudentsController = TextEditingController();
   
   @override
@@ -31,9 +31,7 @@ class _AddScreenState extends State<AddScreen> {
           'Add Group'
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20),
-        child: Form(
+      body: Form(
           key: _formKey,
           child: Column(
             children: [
@@ -79,7 +77,7 @@ class _AddScreenState extends State<AddScreen> {
                   ),
                   ),
              child: Text(
-              'Add Group',
+              'Adding Group',
                 style: TextStyle(color: Colors.white),
              )
              )
