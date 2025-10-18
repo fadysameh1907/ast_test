@@ -60,7 +60,6 @@ void filterData(String query){
         actions: [
           IconButton(onPressed: ()async{
           await FirebaseAuth.instance.signOut();
-          await GoogleSignIn().signOut();
           Navigator.pushReplacementNamed(context, 'login');
           }, icon: Icon(Icons.logout))
         ],
@@ -77,7 +76,7 @@ void filterData(String query){
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                hintText: 'Search....',
+                hintText: 'Searching....',
                 prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
@@ -105,8 +104,8 @@ void filterData(String query){
                   onLongPress: (){
                       UiHelpers.showMyDialog(
                         context: context,
-                         title: 'Choose Action',
-                          content: 'Please Choose Action',
+                         title: 'Choose Action please',
+                          content: 'Please Choose Action of below choises',
                           onConfirm: (){
                               Navigator.push(context, MaterialPageRoute(builder: (context)=> EditScreen(data: filteredData[index])));
                           },
